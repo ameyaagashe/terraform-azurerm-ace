@@ -1,0 +1,3 @@
+examples/.terraform.lock.hcl
+examples/*.terraform/*
+examples/terraform.tfstate

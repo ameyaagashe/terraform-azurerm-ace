@@ -1,0 +1,26 @@
+repos:
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.83.6
+  hooks:
+    - id: terraform_tflint
+    - id: terraform_fmt
+    #- id: infracost_breakdown
+    - id: terraform_validate
+    - id: terrascan
+- repo: https://github.com/bridgecrewio/checkov.git
+  rev: 3.0.40
+  hooks:
+    - id: checkov
+- repo: https://github.com/aquasecurity/tfsec.git
+  rev: v1.28.4
+  hooks:
+    - id: tfsec
+      name: TFSec
+      description: TFsec is a tool to statically analyze Terraform templates to spot potential security issues.
+      language: golang
+      entry: tfsec
+      pass_filenames: false
+-   repo: https://github.com/terraform-docs/terraform-docs
+    rev: v0.16.0
+    hooks:
+    -   id: terraform-docs-system
